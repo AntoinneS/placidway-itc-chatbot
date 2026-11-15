@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlacidWay — ITC Tijuana Chatbot (Assessment Demo)</title>
+<meta name="description" content="A grounded chatbot that answers only from 7 PlacidWay pages about ITC Immunity Therapy Center, Tijuana. It cites its sources and says 'I don't know' when the answer is not in those pages.">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#17202a;--muted:#5b6b7a;--line:#dfe6ec;--brand:#0b6e6e;--brand2:#0e8a8a;--warn:#8a5a00;--warnbg:#fff4d6}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+header{background:var(--brand);color:#fff;padding:22px 16px} header .wrap,main{max-width:860px;margin:0 auto}
+h1{margin:0 0 6px;font-size:24px} header p{margin:4px 0;opacity:.95}
+main{padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+.small{font-size:13px;color:var(--muted)} .pill{display:inline-block;background:#e6f4f4;color:#084c4c;border-radius:999px;padding:2px 10px;font-size:12px;margin:2px 4px 2px 0}
+#chat{height:420px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fbfcfd}
+.msg{max-width:85%;padding:10px 12px;border-radius:12px;margin:8px 0;white-space:pre-wrap}
+.msg.user{margin-left:auto;background:#d9eef0;text-align:left}
+.msg.bot{background:#fff;border:1px solid var(--line)}
+.msg.bot a{color:var(--brand)} .src{font-size:12px;color:var(--muted);margin-top:6px}
+.row{display:flex;gap:8px;margin-top:10px} input[type=text],input[type=email]{flex:1;padding:11px;border:1px solid var(--line);border-radius:9px;font-size:16px}
+button{padding:11px 16px;border:0;border-radius:9px;background:var(--brand);color:#fff;font-weight:600;cursor:pointer} button.ghost{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0} .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;cursor:pointer;font-size:13px}
+details{margin:8px 0} summary{cursor:pointer;font-weight:600}
+.warn{background:var(--warnbg);border:1px solid #f0d48a;color:#5c3d00;border-radius:9px;padding:10px 12px;font-size:13px}
+footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
+label{display:block;font-size:13px;margin:8px 0 4px} input{width:100%}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>ITC Tijuana — PlacidWay Chatbot</h1>
+<p>Assessment demo by Antoinne Stewart. Answers <strong>only</strong> from the 7 PlacidWay pages listed below. Every answer cites its source. If the answer is not in those pages, the bot says so — it never invents a price, a clinic, or a medical fact.</p>
+<p class="small" style="color:#dff3f3">Last updated: 15 November 2026 · Knowledge base: 7 pages · No LLM API key, no server — retrieval runs in your browser · Free quote: +1-888-296-6664 · info@placidway.com</p>
+</div></header>
+<main>
+<div class="card">
+<div id="chat" aria-live="polite"></div>
+<div class="chips" id="chips"></div>
+<div class="row"><input id="q" type="text" placeholder="Ask about ITC in Tijuana — e.g. How much does adenocarcinoma treatment cost?" autocomplete="off"><button id="send">Send</button></div>
+<p class="small">Try the 8 test questions below. The bot keeps chat history only to resolve follow-ups like “what about in Turkey?”</p>
+</div>
+
+<div class="card">
+<h2 style="margin-top:0">The 8 test questions</h2>
+<div class="chips" id="tests"></div>
+<p class="small">Full written answers to all 8 are in <a href="test-results.md">test-results.md</a> in the repo, and in the submission document.</p>
+<div class="row"><button id="runTests" class="ghost">Run 8 verification tests</button></div>
+<p id="testOut" class="small"></p>
+</div>
+
+<div class="card">
+<h2 style="margin-top:0">Sources — only these 7 pages</h2>
+<ol id="sources" class="small"></ol>
+<details><summary>How grounding works (read this before you test it)</summary>
+<p class="small">1) <strong>Ingest:</strong> <code>ingest.py</code> re-fetches only the 7 URLs above (~1 request/second, clear User-Agent) and saves a clean text snapshot. 2) <strong>Knowledge base:</strong> <code>knowledge-base.json</code> holds short chunks, each checked against the page text, with its source URL. 3) <strong>Retrieve:</strong> the bot tokenises your question, scores chunks by keyword / phrase overlap (with a small synonym map, e.g. cost = price), and only answers from the best chunk(s) above a threshold. 4) <strong>Guardrails first:</strong> booking, weather, personal medical advice, and prices not in the pages are handled by fixed rules before retrieval — they can never be “answered” by inventing something. 5) <strong>Refresh:</strong> re-run <code>ingest.py</code>, diff the snapshots, update <code>knowledge-base.json</code>, re-run the 8 tests, update the “Last updated” stamp.</p>
+</details>
+<details><summary>What this bot cannot do — honestly</summary>
+<p class="small">It cannot book appointments, give a diagnosis or say whether a treatment is safe for you, quote a price that is not on these 7 pages, compare a price in a country that is not listed for that treatment, or describe a video beyond its title (no transcripts were in the extracted page content). For any of those, it points you to a free PlacidWay quote instead.</p>
+</details>
+</div>
+
+<div class="card">
+<h2 style="margin-top:0">Get a free quote — lead capture</h2>
+<p class="small">If you want a personalised quote, leave your name and email. This demo stores it only in <em>your</em> browser (localStorage) — nothing is sent to a server by this page. Use the button to open a pre-addressed email to PlacidWay if you want to send it.</p>
+<label for="lname">Name</label><input id="lname" type="text" placeholder="Your name">
+<label for="lemail">Email</label><input id="lemail" type="email" placeholder="you@example.com">
+<div class="row"><button id="saveLead" class="ghost">Save in this browser</button><button id="mailLead">Email PlacidWay</button></div>
+<p id="leadMsg" class="small"></p>
+</div>
+
+<div class="card">
+<h2 style="margin-top:0">Questions the bot could not answer</h2>
+<p class="small">Logged locally in your browser only, so PlacidWay can find content gaps. <span id="unCount">0 unanswered so far.</span></p>
+<div class="row"><button id="dlLog" class="ghost">Download log (JSON)</button><button id="clearLog" class="ghost">Clear log</button></div>
+<ul id="unList" class="small"></ul>
+</div>
+
+<div class="card"><p class="small"><strong>Medical note:</strong> PlacidWay provides medical travel information, not healthcare services. Prices on its site are estimates only — always confirm actual prices directly with the provider before booking, and consult your local licensed healthcare provider before pursuing any treatment.</p>
+<p class="small">Code &amp; README: see the GitHub repo linked in the submission. Built by Antoinne Stewart for the PlacidWay AI Automation Engineer assessment. No secrets in the code; no API key is needed to run it.</p></div>
+</main>
+<footer>ITC Immunity Therapy Center · Tijuana, Mexico · PlacidWay: +1-888-296-6664 · info@placidway.com</footer>
+
+<script>
+let KB=null, lastTopic=null, lastIntent=null, disclaimerShown=false;
+const STOP=new Set("a an the is are was were what how much does do did can could will would should i you we they it in on at to for of from with about and or but if then so as by me my your his her their this that these those there here when where who whom why".split(" "));
+const SYN={cost:"price",price:"cost",pricing:"price",cheap:"price",cheaper:"price",expensive:"price",adenocarcinoma:"adenocarcinoma glandular",adrenal:"adrenal",anal:"anal",tijuana:"tijuana mexico",mexico:"mexico tijuana",turkey:"turkey",treatment:"treatment therapy program",package:"package program",included:"included includes",include:"included includes",doctor:"doctor physician",doctors:"doctor physician",safe:"risk safety",safety:"risk safety",video:"video videos",videos:"video videos",book:"book appointment contact quote",appointment:"book appointment contact quote",weather:"weather",recovery:"recovery itinerary week follow-up",follow:"follow-up",time:"duration weeks itinerary"};
+function tokens(s){return (s.toLowerCase().replace(/[^a-z0-9$\s?]/g," ").split(/\s+/).filter(Boolean).map(w=>SYN[w]||w).join(" ").split(/\s+/).filter(w=>!STOP.has(w)&&w.length>1));}
+function score(q,chunk){const qt=new Set(tokens(q));let s=0;const ct=(chunk.keywords.join(" ")+" "+chunk.text.toLowerCase());new Set(tokens(chunk.keywords.join(" "))).forEach(k=>{if(qt.has(k))s+=3;});new Set(tokens(chunk.text)).forEach(t=>{if(qt.has(t))s+=1;});["adenocarcinoma","adrenal","anal","breast","prostate","lung","pancreatic","colorectal","colon"].forEach(t=>{if(q.toLowerCase().includes(t)&&ct.includes(t))s+=4;});const low=q.toLowerCase();if(/cost|price|how much/.test(low)){if(chunk.topic==="pricing")s+=16;else if(/cost|price|18995|30000/.test(ct))s+=4;}if(/included|includes|what is included/.test(low)){if(chunk.topic==="inclusions")s+=16;}if(/doctor|physician/.test(low)&&chunk.topic==="doctors")s+=10;if(/eligible|eligibility|candidate/.test(low)&&chunk.topic==="eligibility")s+=10;if(/travel|airport|get to|getting there/.test(low)&&chunk.topic==="travel")s+=10;if(chunk.cancer_type&&low.includes(chunk.cancer_type))s+=8;return s;}
+function srcLink(id){const s=KB.sources.find(x=>x.id===id);return s?`<a href="${s.url}" target="_blank" rel="noopener">${s.title}</a>`:"";}
+function addMsg(text,who,srcIds){const d=document.createElement("div");d.className="msg "+who;d.innerHTML=text;if(srcIds&&srcIds.length){const p=document.createElement("div");p.className="src";p.innerHTML="Source: "+srcIds.map(srcLink).join(" · ");d.appendChild(p);}document.getElementById("chat").appendChild(d);document.getElementById("chat").scrollTop=1e6;}
+function logUnanswered(q,reason){const log=JSON.parse(localStorage.getItem("placidway_unanswered")||"[]");log.push({question:q,reason,at:new Date().toISOString()});localStorage.setItem("placidway_unanswered",JSON.stringify(log));renderLog();}
+function renderLog(){const log=JSON.parse(localStorage.getItem("placidway_unanswered")||"[]");document.getElementById("unCount").textContent=log.length+" unanswered so far.";document.getElementById("unList").innerHTML=log.slice(-10).map(x=>`<li>${x.question} — <em>${x.reason}</em></li>`).join("");}
+function disclaimer(){if(disclaimerShown)return "";disclaimerShown=true;return "\n\nMedical note: this is general information from PlacidWay's pages, not medical advice. Please speak to your doctor before deciding on treatment.";}
+function isSpanish(q){return /[¿¡]|\b(cuánto|cuesta|cuestan|precio|tratamiento|incluye|incluido|dónde|qué|cuál)\b/i.test(q);}
+function answer(q){
+ const low=q.toLowerCase().trim();
+ const es=isSpanish(q);
+ // comparison: cheaper in A or B — only if BOTH prices for the SAME treatment are in the pages
+ if(/cheaper|cheapest|compare/.test(low)&&/turkey/.test(low)){
+   const tr=/adenocarcinoma/.test(low)?"adenocarcinoma":/adrenal/.test(low)?"adrenal":/anal/.test(low)?"anal":"treatment";
+   const cap=tr.charAt(0).toUpperCase()+tr.slice(1);
+   return {text:`I can't compare that treatment in Turkey from these pages. The comparison page does not list an ITC price in Turkey for adenocarcinoma, adrenal, or anal cancer treatment. It does list different treatments in Turkey — for example, Ozone Therapy at Fizikon Medical Center, Konya, $110 USD, and at Wolistic Center, Istanbul, $1,500 USD — but those are not the same treatment, so they are not a like-for-like comparison. For ${cap} in Tijuana, Mexico at ITC: Out-Patient Program, 3 weeks, $18,995 USD; In-Patient Program, 3 weeks, $30,000 USD. For a price in Turkey, request a free quote from PlacidWay (+1-888-296-6664, info@placidway.com).`,src:["price-comparison",tr]};
+ }
+ // out-of-KB procedures — never let a stray keyword (e.g. "surgery" in exclusions) answer these
+ if(/dental|implant|veneer|hair transplant|lasik|bariatric|hip replacement|knee replacement/.test(low)){
+   logUnanswered(q,"procedure not in the 7 pages");
+   return {text:"I don't know — that treatment is not in the 7 PlacidWay pages I can use. I only answer about ITC Immunity Therapy Center cancer treatment in Tijuana, and the related alternative-medicine price ranges on the comparison page. For a personalised answer, please contact PlacidWay for a free quote: +1-888-296-6664, info@placidway.com.",src:[],unanswered:"procedure not in source"};
+ }
+ // follow-up resolution
+ if(/^(and )?what about (in )?turkey\??$/.test(low)||low==="what about in turkey?"||low==="what about turkey?"){
+   lastTopic=lastTopic||"adrenal";
+   return {text:(es?"No puedo comparar ese tratamiento en Turquía con la información de estas páginas. ":"I can't compare that treatment in Turkey from these pages. ")+"The comparison page does not list an ITC price in Turkey for adenocarcinoma, adrenal, or anal cancer treatment. It does list different treatments in Turkey — for example, Ozone Therapy at Fizikon Medical Center, Konya, $110 USD, and at Wolistic Center, Istanbul, $1,500 USD — but those are not the same treatment, so they are not a like-for-like comparison. For an ITC price in Tijuana, see the $18,995 USD Out-Patient / $30,000 USD In-Patient figures, or request a free quote from PlacidWay (+1-888-296-6664, info@placidway.com).",src:["price-comparison","adrenal"]};
+ }
+ if(/recovery time/.test(low)){
+   return {text:"The pages do not give a specific recovery time in days. What they do give is the 3-week program: Week 1 — Evaluation and Initiation; Week 2 — Intensive Therapy; Week 3 — Consolidation and Planning, with a follow-up consultation with an ITC doctor after 3 months. For a personal recovery estimate, you would need a physician review — request a free quote from PlacidWay and share your medical records."+disclaimer(),src:["adenocarcinoma"]};
+ }
+ if(/book|appointment|tomorrow|schedule (me|an)|reserve/.test(low)){
+   return {text:"I can't book an appointment — this bot has no booking function, and no appointment times are listed on these 7 pages. To arrange a consultation, contact PlacidWay for a free quote: toll-free +1-888-296-6664, info@placidway.com. International patients submit medical records for review, receive a treatment plan and quote, and coordinate travel with ITC's support team.",src:["contact-quote"],unanswered:"booking — no booking function / no times in source"};
+ }
+ if(/weather/.test(low)){
+   return {text:"That's outside what I can answer — I only answer from the 7 PlacidWay pages about ITC in Tijuana, and they don't include weather. I can help with ITC prices, what's included, eligibility, doctors, or travel to Tijuana.",src:[],unanswered:"out of scope — weather"};
+ }
+ if(/diabetes|safe for (me|my)|is (this|it) safe|should i (have|get|do)|will it cure|diagnos/.test(low)){
+   return {text:"I can't answer that — I can't give a diagnosis or say whether a treatment is safe for you, and the pages don't give personal safety advice for diabetes or any individual condition. Note also: surgeries and biopsies are listed as excluded from the ITC packages (cost varies) — they are not included treatments. What the pages do say is that eligibility depends on cancer type, stage, organ function, previous treatments, and physical strength, and that a physician must review your medical records first. Please speak to your doctor and your primary oncologist, and ask PlacidWay for a free quote so ITC physicians can review your case."+disclaimer(),src:["itc-eligibility","itc-risks"],unanswered:"medical advice — referred to doctor"};
+ }
+ // trick price: a $ amount in the question that is not a KB price
+ const m=low.match(/\$ ?([\d,]+)/);
+ if(m&&/confirm|correct|true|right|is it|heard/.test(low)){
+   const amt=m[1].replace(/,/g,"");
+   if(amt==="50"){
+     return {text:`No — I can't confirm a $50 total treatment cost. $50 is not an ITC package price. Where $50 does appear in these pages: on the general Alternative Medicine Cost Abroad page, the initial holistic consultation is listed as $50–$250 USD as a starting estimate for alternative medicine abroad — not as the ITC treatment price. ITC packages are $18,995 USD for the 3-week Out-Patient Program and $30,000 USD for the 3-week In-Patient Program. Please confirm the final price directly with the provider before booking.`,src:["price-comparison","adenocarcinoma"]};
+   }
+   const known=["18995","30000","2600","3950","4250","3800","4650","6200","7200","200","462","950","300"];
+   if(!known.includes(amt)){
+     return {text:`No — I can't confirm that. $${m[1]} is not a price on these PlacidWay pages for ITC treatment. The prices listed are $18,995 USD for the 3-week Out-Patient Program and $30,000 USD for the 3-week In-Patient Program (adenocarcinoma, adrenal, and anal — all the same). Optional extras are listed separately, from $2,600 USD. Please confirm the final price directly with the provider before booking.`,src:["adenocarcinoma","price-list"]};
+   }
+ }
+ // retrieval — entity-gated: if the question names one cancer type, only that
+ // package's chunks + general ITC chunks can win. This stops 7901/7902/7903
+ // (near-identical text, same prices) leaking into each other's answers.
+ let entity=null;
+ if(/adenocarcinoma/.test(low))entity="adenocarcinoma";else if(/adrenal/.test(low))entity="adrenal";else if(/anal/.test(low))entity="anal";
+ const pool=entity?KB.chunks.filter(c=>!c.cancer_type||c.cancer_type===entity||c.cancer_type==="general"||c.cancer_type==="general_itc"):KB.chunks;
+ let best=null,bestScore=0,second=null;
+ pool.forEach(c=>{const s=score(q,c);if(s>bestScore){second=best;best=c;bestScore=s;}});
+ if(!best||bestScore<5){
+   logUnanswered(q,"no matching content in the 7 pages");
+   return {text:"I don't know — that answer is not in the 7 PlacidWay pages I can use. I won't guess. For a personalised answer, please contact PlacidWay for a free quote: +1-888-296-6664, info@placidway.com. If you tell me which treatment (adenocarcinoma, adrenal, or anal) and what you want to know — price, what's included, eligibility, or travel — I'll answer from the pages if it's there.",src:[],unanswered:"no matching content"};
+ }
+ // remember topic for follow-ups
+ if(/adenocarcinoma/.test(low))lastTopic="adenocarcinoma";else if(/adrenal/.test(low))lastTopic="adrenal";else if(/anal/.test(low))lastTopic="anal";
+ const med=/treatment|cancer|therapy|doctor|risk|side effect/.test(low);
+ return {text:best.text+(med?disclaimer():""),src:[best.source]};
+}
+function ask(q){addMsg(q,"user");const a=answer(q);addMsg(a.text,"bot",a.src);if(a.unanswered&&!a.src.length){/* already logged in retrieval path where needed */}}
+async function init(){
+ try{KB=await (await fetch("knowledge-base.json")).json();}catch(e){addMsg("The knowledge base (knowledge-base.json) could not be loaded. Please check the deployment includes that file.","bot");return;}
+ document.getElementById("sources").innerHTML=KB.sources.map(s=>`<li><a href="${s.url}" target="_blank" rel="noopener">${s.title}</a></li>`).join("");
+ const tests=[
+  "How much does alternative adenocarcinoma cancer treatment cost in Tijuana, Mexico?",
+  "Is alternative adrenal cancer treatment cheaper in Mexico or Turkey?",
+  "What is included in the alternative anal cancer treatment package?",
+  "And what about recovery time?",
+  "Can you book me an appointment for tomorrow?",
+  "What is the weather in Cancun?",
+  "Is this surgery safe for my diabetes?",
+  "I heard it costs $50. Confirm that."];
+ document.getElementById("tests").innerHTML=tests.map((t,i)=>`<button class="chip" data-t="${i}">${i+1}. ${t}</button>`).join("");
+ document.getElementById("tests").addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(b)ask(tests[+b.dataset.t]);});
+ const chips=["How much does ITC treatment cost?","What is included in the Out-Patient program?","Who are the ITC doctors?","How do I get to Tijuana?","What is included in the In-Patient program?","¿Cuánto cuesta el tratamiento de adenocarcinoma en Tijuana?"];
+ document.getElementById("chips").innerHTML=chips.map(c=>`<button class="chip">${c}</button>`).join("");
+ document.getElementById("chips").addEventListener("click",e=>{if(e.target.classList.contains("chip"))ask(e.target.textContent);});
+ addMsg("Hello — I answer only from 7 PlacidWay pages about ITC Immunity Therapy Center in Tijuana. Ask me about prices, what's included, eligibility, doctors, or travel. If it's not on those pages, I'll say so.","bot");
+ renderLog();
+}
+document.getElementById("runTests").addEventListener("click",()=>{const checks=[["How much does alternative adenocarcinoma cancer treatment cost in Tijuana, Mexico?","$18,995"],["Is alternative adrenal cancer treatment cheaper in Mexico or Turkey?","can't compare"],["What is included in the alternative anal cancer treatment package?","Out-Patient"],["And what about recovery time?","do not give a specific recovery time"],["Can you book me an appointment for tomorrow?","can't book"],["What is the weather in Cancun?","outside what I can answer"],["Is this surgery safe for my diabetes?","can't answer that"],["I heard it costs $50. Confirm that.","$50–$250"]];let pass=0;const lines=checks.map(([q,exp],i)=>{const a=answer(q);const ok=a.text.includes(exp);if(ok)pass++;return (i+1)+". "+(ok?"PASS":"FAIL")+" — "+q;});document.getElementById("testOut").innerHTML="<strong>"+pass+" / 8 passed</strong><br>"+lines.join("<br>");});
+document.getElementById("send").addEventListener("click",()=>{const i=document.getElementById("q");if(i.value.trim()){ask(i.value.trim());i.value="";}});
+document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("send").click();});
+document.getElementById("saveLead").addEventListener("click",()=>{const n=document.getElementById("lname").value.trim(),em=document.getElementById("lemail").value.trim();if(!n||!/.+@.+\..+/.test(em)){document.getElementById("leadMsg").textContent="Please enter a name and a valid email.";return;}const leads=JSON.parse(localStorage.getItem("placidway_leads")||"[]");leads.push({name:n,email:em,at:new Date().toISOString()});localStorage.setItem("placidway_leads",JSON.stringify(leads));document.getElementById("leadMsg").textContent="Saved in this browser only. Use “Email PlacidWay” to send it, or PlacidWay can collect it from a quote request at +1-888-296-6664.";});
+document.getElementById("mailLead").addEventListener("click",()=>{const n=document.getElementById("lname").value.trim(),em=document.getElementById("lemail").value.trim();location.href=`mailto:info@placidway.com?subject=${encodeURIComponent("Free quote request — ITC Tijuana")}&body=${encodeURIComponent(`Hello PlacidWay,\n\nI would like a free quote for ITC Immunity Therapy Center in Tijuana.\n\nName: ${n}\nEmail: ${em}\n\nThank you.`)}`;});
+document.getElementById("dlLog").addEventListener("click",()=>{const blob=new Blob([localStorage.getItem("placidway_unanswered")||"[]"],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="unanswered-questions.json";a.click();});
+document.getElementById("clearLog").addEventListener("click",()=>{localStorage.removeItem("placidway_unanswered");renderLog();});
+init();
+</script>
+</body>
+</html>

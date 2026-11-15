@@ -1,0 +1,627 @@
+{
+  "chunks": [
+    {
+      "id": "itc-overview",
+      "keywords": [
+        "itc",
+        "immunity therapy center",
+        "what is",
+        "about",
+        "tijuana",
+        "mexico",
+        "alternative cancer treatment",
+        "founder",
+        "carlos bautista"
+      ],
+      "source": "profile",
+      "text": "ITC — Immunity Therapy Center in Tijuana, Mexico — provides customised alternative cancer treatment designed to stimulate the immune system and target malignant cells. Programs are tailored to each person's unique biological profile, medical history, and stage of diagnosis. Founded by Dr. Carlos Bautista. Located in Tijuana, Mexico, just minutes across the U.S. border, near San Diego International Airport (SAN, 25 minutes away). ITC offers free rides to and from the airport. The page states the centre is approved by COFEPRIS.",
+      "title": "What ITC is",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "general"
+    },
+    {
+      "id": "itc-price-base",
+      "keywords": [
+        "cost",
+        "price",
+        "how much",
+        "starting",
+        "18995",
+        "base price",
+        "standard"
+      ],
+      "source": "profile",
+      "text": "Treatment costs start at $18,995 USD for standard multi-week programs. Total costs vary based on protocol duration, specific therapies required, and diagnostic needs. The base package price listed on the profile is $18,995 USD.",
+      "title": "ITC base price",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "pricing"
+    },
+    {
+      "id": "itc-price-inclusions-base",
+      "keywords": [
+        "included",
+        "includes",
+        "inclusions",
+        "package includes",
+        "base package",
+        "what is included"
+      ],
+      "source": "profile",
+      "text": "The $18,995 USD base package includes: physician consultations and daily care; a customised alternative therapy suite; daily IV nutrition and natural supplements; medical monitoring and nursing care; local transportation assistance; and patient companion support services. Patients can request a personalised quote based on required length of stay and customised therapeutic needs.",
+      "title": "ITC base package inclusions",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "pricing"
+    },
+    {
+      "id": "itc-doctors",
+      "keywords": [
+        "doctor",
+        "doctors",
+        "physician",
+        "carlos bautista",
+        "david alvarez",
+        "adolfo carrillo",
+        "pablo orozco",
+        "medical director",
+        "who treats"
+      ],
+      "source": "profile",
+      "text": "Medical Director: Dr. Carlos Bautista, M.D. Treating physicians listed: Dr. David Alvarez, M.D., Dr. Adolfo Carrillo, M.D., and Dr. Pablo Orozco, M.D. The page states the medical team consists of licensed physicians and specialists.",
+      "title": "ITC doctors",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "doctors"
+    },
+    {
+      "id": "itc-eligibility",
+      "keywords": [
+        "eligible",
+        "eligibility",
+        "candidate",
+        "who can",
+        "assessment",
+        "evaluation",
+        "stage",
+        "medical records"
+      ],
+      "source": "profile",
+      "text": "Eligibility depends on cancer type, stage, physical strength, organ function, and medical history. Patients undergo a medical evaluation prior to acceptance. Candidacy depends on factors such as cancer type, stage, organ functionality, previous conventional treatments (chemotherapy or radiation), and current physical strength. Patients submit prior diagnosis reports, imaging results, blood tests, and medical history for detailed physician evaluation.",
+      "title": "Eligibility and assessment",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "eligibility"
+    },
+    {
+      "id": "itc-process",
+      "keywords": [
+        "how does it work",
+        "process",
+        "steps",
+        "treatment works",
+        "initial review",
+        "planning",
+        "monitoring",
+        "follow-up"
+      ],
+      "source": "profile",
+      "text": "How it works at ITC: 1) Initial Medical Review — patients submit prior diagnosis reports, imaging results, blood tests, and medical history. 2) Individual Treatment Planning — a care pathway is created based on diagnosis, tumor location, biological health condition, and treatment goals. 3) Treatment Explanation — physicians explain each therapy, such as laser therapy, hyperthermia, or biomagnetic therapy. 4) Medical Monitoring — daily clinical assessments and periodic blood tests. 5) Follow-Up Support — post-treatment protocols, lifestyle advice, and continued communication guidance after returning home. 6) Coordination With Existing Doctors — patients are encouraged to share updates with their home healthcare providers.",
+      "title": "How treatment works",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "process"
+    },
+    {
+      "id": "itc-risks",
+      "keywords": [
+        "risk",
+        "risks",
+        "side effects",
+        "safe",
+        "safety",
+        "danger",
+        "considerations"
+      ],
+      "source": "profile",
+      "text": "The profile states: cancer care outcomes vary based on individual biology, stage, and previous therapies; benefits and limitations of alternative therapies should be reviewed carefully before starting; possible side effects, detox reactions, or physical changes should be discussed with medical professionals; patients should avoid delaying necessary standard treatments without consulting their primary oncologist; and seeking a second opinion can help. This bot does not give medical advice or a diagnosis.",
+      "title": "Risks and medical considerations",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "general"
+    },
+    {
+      "id": "itc-travel",
+      "keywords": [
+        "travel",
+        "getting there",
+        "airport",
+        "san diego",
+        "tijuana airport",
+        "shuttle",
+        "transport",
+        "how to get",
+        "location",
+        "where is"
+      ],
+      "source": "profile",
+      "text": "ITC is located near San Diego International Airport (SAN), and shuttle services facilitate border crossings and local transit to medical appointments and affiliated hotel accommodations. San Diego International Airport (SAN) is just 25 minutes from Tijuana. Tijuana also has its own airport, Tijuana International Airport (TIJ). The profile page states ITC offers free rides to and from the airport, and lists local transportation assistance in the base package inclusions. Attractions mentioned on the page include Avenida Revolución and the Tijuana Cultural Center.",
+      "title": "Travel to Tijuana",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "travel"
+    },
+    {
+      "id": "itc-cancers-treated",
+      "keywords": [
+        "breast",
+        "prostate",
+        "lung",
+        "colon",
+        "colorectal",
+        "pancreatic",
+        "ovarian",
+        "cervical",
+        "liver",
+        "kidney",
+        "leukemia",
+        "lymphoma",
+        "melanoma",
+        "brain",
+        "stomach",
+        "sarcoma",
+        "what cancers",
+        "treat"
+      ],
+      "source": "profile",
+      "text": "Cancer types listed on the ITC profile as treated: Breast Cancer, Prostate Cancer, Lung Cancer, Colon and Colorectal Cancer, Pancreatic Cancer, Ovarian and Cervical Cancer, Liver and Kidney Cancer, Leukemia and Lymphoma, Melanoma and Skin Cancers, Brain Tumors, Stomach and Esophageal Cancer, and Sarcoma and Bone Cancers.",
+      "title": "Cancer types listed on the profile",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "general"
+    },
+    {
+      "id": "itc-rating",
+      "keywords": [
+        "rating",
+        "reviews",
+        "rated",
+        "4.3",
+        "award",
+        "top cancer center"
+      ],
+      "source": "profile",
+      "text": "ITC is rated 4.3 out of 5, based on 6 reviews, on the PlacidWay pages in this knowledge base. The profile also states ITC was recognised as Top Cancer Center in Latin America 2025.",
+      "title": "ITC rating",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "general"
+    },
+    {
+      "id": "adenocarcinoma-price",
+      "keywords": [
+        "adenocarcinoma",
+        "cost",
+        "price",
+        "how much",
+        "glandular",
+        "tijuana"
+      ],
+      "source": "adenocarcinoma",
+      "text": "Alternative Adenocarcinoma Cancer Treatment in Tijuana, Mexico, at ITC: Out-Patient Program, 3 weeks, $18,995 USD. In-Patient Program, 3 weeks, $30,000 USD. The In-Patient program is specifically designed for those requiring 24/7 medical supervision or those with mobility challenges. Adenocarcinoma originates in the glandular cells of organs such as the lungs, colon, breast, or prostate.",
+      "title": "Adenocarcinoma price in Tijuana",
+      "cancer_type": "adenocarcinoma",
+      "scope": "itc_clinic_specific",
+      "topic": "pricing"
+    },
+    {
+      "id": "adenocarcinoma-outpatient",
+      "keywords": [
+        "adenocarcinoma",
+        "outpatient",
+        "out-patient",
+        "included",
+        "includes",
+        "what is included"
+      ],
+      "source": "adenocarcinoma",
+      "text": "Included in the Adenocarcinoma Out-Patient Program ($18,995 USD, 3 weeks): weekly comprehensive lab work (CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels TP/TPT, specific tumor markers, and urinalysis); one prescribed X-ray, ultrasound, or CT scan of one area as directed by the ITC physician; all core alternative treatments listed as standard within the 3-week program; two health-focused meals daily during treatment hours; standard medications in the out-patient protocol; and one post-discharge consultation with an ITC doctor after 3 months.",
+      "title": "Adenocarcinoma Out-Patient inclusions",
+      "cancer_type": "adenocarcinoma",
+      "scope": "itc_clinic_specific",
+      "topic": "inclusions"
+    },
+    {
+      "id": "adenocarcinoma-inpatient",
+      "keywords": [
+        "adenocarcinoma",
+        "inpatient",
+        "in-patient",
+        "included",
+        "includes",
+        "24/7",
+        "room and board"
+      ],
+      "source": "adenocarcinoma",
+      "text": "Included in the Adenocarcinoma In-Patient Program ($30,000 USD, 3 weeks): 24/7 medical supervision with constant access to doctor and nursing care; full room and board with private accommodations and three nutritious meals daily (Monday through Sunday); extensive diagnostics including comprehensive weekly lab panels with tumor markers and immune function monitoring; one prescribed X-ray, ultrasound, or CT scan per doctor's orders; full access to all program-specific alternative and integrative interventions; pharmacy support with medications specific to the in-patient protocol; and a follow-up consultation with an ITC doctor after 3 months.",
+      "title": "Adenocarcinoma In-Patient inclusions",
+      "cancer_type": "adenocarcinoma",
+      "scope": "itc_clinic_specific",
+      "topic": "inclusions"
+    },
+    {
+      "id": "adrenal-price",
+      "keywords": [
+        "adrenal",
+        "cost",
+        "price",
+        "how much",
+        "tijuana"
+      ],
+      "source": "adrenal",
+      "text": "Alternative Adrenal Cancer Treatment in Tijuana, Mexico, at ITC: Out-Patient Program, 3 weeks, $18,995 USD. In-Patient Program, 3 weeks, $30,000 USD. The In-Patient program is specifically designed for those requiring 24/7 medical supervision or those with mobility challenges.",
+      "title": "Adrenal price in Tijuana",
+      "cancer_type": "adrenal",
+      "scope": "itc_clinic_specific",
+      "topic": "pricing"
+    },
+    {
+      "id": "adrenal-outpatient",
+      "keywords": [
+        "adrenal",
+        "outpatient",
+        "out-patient",
+        "included",
+        "includes"
+      ],
+      "source": "adrenal",
+      "text": "Included in the Adrenal Out-Patient Program ($18,995 USD, 3 weeks): weekly comprehensive lab work (CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels TP/TPT, specific tumor markers, and urinalysis); one prescribed X-ray, ultrasound, or CT scan of one area as directed by the ITC physician; all core alternative treatments listed as standard within the 3-week program; two health-focused meals daily during treatment hours; standard medications in the out-patient protocol; and one post-discharge consultation with an ITC doctor after 3 months.",
+      "title": "Adrenal Out-Patient inclusions",
+      "cancer_type": "adrenal",
+      "scope": "itc_clinic_specific",
+      "topic": "inclusions"
+    },
+    {
+      "id": "adrenal-inpatient",
+      "keywords": [
+        "adrenal",
+        "inpatient",
+        "in-patient",
+        "included",
+        "includes",
+        "24/7"
+      ],
+      "source": "adrenal",
+      "text": "Included in the Adrenal In-Patient Program ($30,000 USD, 3 weeks): 24/7 medical supervision; full room and board with private accommodations and three nutritious meals daily (Monday through Sunday); extensive diagnostics including comprehensive weekly lab panels with tumor markers and immune function monitoring; one prescribed X-ray, ultrasound, or CT scan per doctor's orders; full access to all program-specific alternative and integrative interventions; pharmacy support; and a follow-up consultation with an ITC doctor after 3 months.",
+      "title": "Adrenal In-Patient inclusions",
+      "cancer_type": "adrenal",
+      "scope": "itc_clinic_specific",
+      "topic": "inclusions"
+    },
+    {
+      "id": "anal-price",
+      "keywords": [
+        "anal",
+        "cost",
+        "price",
+        "how much",
+        "tijuana",
+        "colorectal"
+      ],
+      "source": "anal",
+      "text": "Alternative Anal Cancer Treatment in Tijuana, Mexico, at ITC: Out-Patient Program, 3 weeks, $18,995 USD. In-Patient Program, 3 weeks, $30,000 USD. The In-Patient program is specifically designed for those requiring 24/7 medical supervision or those with mobility challenges.",
+      "title": "Anal price in Tijuana",
+      "cancer_type": "anal",
+      "scope": "itc_clinic_specific",
+      "topic": "pricing"
+    },
+    {
+      "id": "anal-outpatient",
+      "keywords": [
+        "anal",
+        "outpatient",
+        "out-patient",
+        "included",
+        "includes"
+      ],
+      "source": "anal",
+      "text": "Included in the Anal Out-Patient Program ($18,995 USD, 3 weeks): weekly comprehensive lab work (CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels TP/TPT, specific tumor markers, and urinalysis); one prescribed X-ray, ultrasound, or CT scan of one area as directed by the ITC physician; all core alternative treatments listed as standard within the 3-week program; two health-focused meals daily during treatment hours; standard medications in the out-patient protocol; and one post-discharge consultation with an ITC doctor after 3 months.",
+      "title": "Anal Out-Patient inclusions",
+      "cancer_type": "anal",
+      "scope": "itc_clinic_specific",
+      "topic": "inclusions"
+    },
+    {
+      "id": "anal-inpatient",
+      "keywords": [
+        "anal",
+        "inpatient",
+        "in-patient",
+        "included",
+        "includes",
+        "24/7"
+      ],
+      "source": "anal",
+      "text": "Included in the Anal In-Patient Program ($30,000 USD, 3 weeks): 24/7 medical supervision; full room and board with private accommodations and three nutritious meals daily (Monday through Sunday); extensive diagnostics including comprehensive weekly lab panels with tumor markers and immune function monitoring; one prescribed X-ray, ultrasound, or CT scan per doctor's orders; full access to all program-specific alternative and integrative interventions; pharmacy support; and a follow-up consultation with an ITC doctor after 3 months.",
+      "title": "Anal In-Patient inclusions",
+      "cancer_type": "anal",
+      "scope": "itc_clinic_specific",
+      "topic": "inclusions"
+    },
+    {
+      "id": "itc-optional",
+      "keywords": [
+        "optional",
+        "extra",
+        "additional",
+        "lak",
+        "killer cell",
+        "ethanol",
+        "ablation",
+        "mononuclear",
+        "intratumoral",
+        "immunotherapy",
+        "add-on"
+      ],
+      "source": "adenocarcinoma",
+      "text": "Optional specialised procedures, at additional cost, for the Adenocarcinoma, Adrenal, and Anal packages — recommended only after a thorough evaluation by the medical board: Lymphocytes Activated Killer Cells (LAK) $2,600 USD; Specific Killer Cell Antibody $3,950–$4,250 USD; Ethanol Tumor Ablation $3,800–$4,250 USD; Mononuclear Cell Activation (MCA) $4,650 USD; Intratumoral Immunotherapy $6,200–$7,200 USD.",
+      "title": "Optional specialised procedures — all three packages",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "optional_extras"
+    },
+    {
+      "id": "itc-excluded",
+      "keywords": [
+        "excluded",
+        "not included",
+        "extra cost",
+        "specialist",
+        "transfusion",
+        "ambulance",
+        "additional imaging",
+        "surgery"
+      ],
+      "source": "adenocarcinoma",
+      "text": "Excluded from the base price, for the Adenocarcinoma, Adrenal, and Anal packages: specialty medications (cost varies); specialist consultations, approximately $200 USD per visit; surgical interventions or biopsies (cost varies); blood transfusions, approximately $462 USD per pint; ambulance transfers $950 USD plus emergency doctor fees; additional imaging beyond the included diagnostic, $300 USD per area; and optional home programs / home-care kits.",
+      "title": "Excluded services — all three packages",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "exclusions"
+    },
+    {
+      "id": "itc-itinerary",
+      "keywords": [
+        "itinerary",
+        "week 1",
+        "week 2",
+        "week 3",
+        "how long",
+        "duration",
+        "3 weeks",
+        "recovery time",
+        "recovery",
+        "schedule",
+        "timeline"
+      ],
+      "source": "adenocarcinoma",
+      "text": "Typical 3-week itinerary at ITC Tijuana: Week 1 — Evaluation and Initiation: arrival, comprehensive diagnostic blood panels, and the first phase of immune-boosting therapies and detoxification. Week 2 — Intensive Therapy: daily rotation of specialised alternative treatments tailored to the tumor's response and the patient's energy levels. Week 3 — Consolidation and Planning: final round of therapy, concluding lab work, and development of a customised home-care program. A follow-up consultation with an ITC doctor is included after 3 months. No specific number of recovery days is stated on these pages.",
+      "title": "3-week itinerary",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "process"
+    },
+    {
+      "id": "price-list-all",
+      "keywords": [
+        "price list",
+        "breast",
+        "prostate",
+        "lung",
+        "pancreatic",
+        "colorectal",
+        "colon",
+        "cost",
+        "price"
+      ],
+      "source": "price-list",
+      "text": "ITC Price List (USD): Breast Cancer $18,995; Prostate Cancer $18,995; Lung Cancer $18,995; Pancreatic Cancer $18,995; Colorectal Cancer $18,995; Colon Cancer $18,995.",
+      "title": "ITC price list",
+      "cancer_type": "general_itc",
+      "scope": "itc_clinic_specific",
+      "topic": "pricing"
+    },
+    {
+      "id": "comparison-ranges",
+      "keywords": [
+        "compare",
+        "comparison",
+        "alternative medicine",
+        "acupuncture",
+        "ayurvedic",
+        "ozone",
+        "stem cell",
+        "naturopathic",
+        "range",
+        "abroad"
+      ],
+      "source": "price-comparison",
+      "text": "Alternative Medicine Cost Abroad — Compare Prices 2026, starting estimates only: Acupuncture Therapy Package $200–$800 USD; Ayurvedic Panchakarma (14 Days) $800–$2,500 USD; Ozone Therapy Package $500–$1,500 USD; Alternative Stem Cell Therapy $3,000–$10,000 USD; Naturopathic Wellness Retreat $1,200–$4,000 USD. The page states: 'Prices are starting estimates; final cost varies by clinic, surgeon experience, and patient anatomy. Always request a personalized quote.'",
+      "title": "Alternative medicine price ranges abroad 2026",
+      "cancer_type": "general",
+      "scope": "general_abroad_comparison",
+      "topic": "pricing_comparison"
+    },
+    {
+      "id": "comparison-components",
+      "keywords": [
+        "components",
+        "consultation",
+        "sessions",
+        "biologics",
+        "supplements",
+        "facility",
+        "typically included",
+        "often not included"
+      ],
+      "source": "price-comparison",
+      "text": "Cost components on the price-comparison page (USD): Initial Holistic Consultation $50–$250; Core Treatment Sessions $200–$3,000; Biologics or Specialized IVs $500–$4,000; Herbal and Natural Supplements $100–$600; Facility Fees / Accommodation $500–$2,500. Typically included in a standard alternative medicine package abroad (per that page): initial holistic health assessment, personalised alternative treatment plan, scheduled therapy sessions, prescribed natural or herbal supplements, specialised dietary meals (if residential), mind-body wellness activities, and post-treatment lifestyle coaching. Often not included: international flights and transfers, hotel accommodation (for outpatient clinics), long-term supplement refills, standard allopathic emergency care, and travel and medical complications insurance.",
+      "title": "Alternative medicine cost components",
+      "cancer_type": "general",
+      "scope": "general_abroad_comparison",
+      "topic": "pricing_comparison"
+    },
+    {
+      "id": "comparison-clinics",
+      "keywords": [
+        "turkey",
+        "thailand",
+        "bangkok",
+        "konya",
+        "istanbul",
+        "guadalajara",
+        "puebla",
+        "fizikon",
+        "wolistic",
+        "visani",
+        "cheaper"
+      ],
+      "source": "price-comparison",
+      "text": "Other clinics listed on the Alternative Medicine comparison page (these are NOT ITC, and their prices are for the procedures named on that page): Form Recovery and Wellness, Bangkok, Thailand — $64 USD; Fizikon Medical Center, Konya, Turkey — $110 USD, Ozone Therapy; Stem Health Guadalajara, Zapopan, Mexico — $1,000 USD, Ozone Therapy; Wolistic Center, Istanbul, Turkey — $1,500 USD, Ozone Therapy, and $2,000 USD, Live Cell Therapy; VISANI Stem Cells, Puebla, Mexico — $5,500 USD, Live Cell Therapy. The page does NOT list an ITC price in Turkey, and does NOT list an adenocarcinoma, adrenal, or anal cancer price in Turkey.",
+      "title": "Other clinics on the comparison page",
+      "cancer_type": "general",
+      "scope": "general_abroad_comparison",
+      "topic": "pricing_comparison"
+    },
+    {
+      "id": "videos-page",
+      "keywords": [
+        "video",
+        "videos",
+        "watch",
+        "youtube",
+        "sadie",
+        "erika",
+        "story",
+        "testimonial"
+      ],
+      "source": "videos",
+      "text": "The ITC videos page lists video titles, including 'Safety Questions Answered: Is Alternative Cancer Treatment in Tijuana, Mexico Right for You?' and patient stories such as Sadie conquering Stage 4 Hodgkin Lymphoma, and Erika Henkelman's Breast Cancer Treatment Journey in Tijuana (published 2026-10-28). No video transcripts are included in the extracted content from this page, so this bot does not quote what a video says beyond its title. Price range shown on the videos page: $18,995 USD. Rating: 4.3/5 (6 reviews).",
+      "title": "ITC videos page",
+      "cancer_type": "general",
+      "scope": "video_title_only",
+      "topic": "videos"
+    },
+    {
+      "id": "contact-quote",
+      "keywords": [
+        "contact",
+        "quote",
+        "free quote",
+        "book",
+        "appointment",
+        "call",
+        "email",
+        "how to contact",
+        "get in touch"
+      ],
+      "source": "profile",
+      "text": "To get a personalised quote or ask about consultation, contact PlacidWay: toll-free +1-888-296-6664, email info@placidway.com. International patients submit medical records for review, receive a treatment plan and quote, and coordinate travel with ITC's support team. PlacidWay's quote team states it replies within 24 hours on the comparison page. This bot cannot book appointments.",
+      "title": "Contact and free quote",
+      "cancer_type": "general",
+      "scope": "itc_clinic_specific",
+      "topic": "general"
+    },
+    {
+      "id": "disclaimer-page",
+      "keywords": [
+        "disclaimer",
+        "not medical advice",
+        "estimates only",
+        "confirm price"
+      ],
+      "source": "price-comparison",
+      "text": "PlacidWay.com provides medical travel information, not healthcare services. PlacidWay does not endorse any providers and is not responsible for the care received. Prices on the site are estimates only, provided by the centers. Always confirm actual prices directly with the provider before booking. Consult a local licensed healthcare provider before pursuing any treatment found on the site.",
+      "title": "PlacidWay disclaimer",
+      "cancer_type": "general",
+      "scope": "general_abroad_comparison",
+      "topic": "general"
+    },
+    {
+      "id": "consultation-50-250",
+      "keywords": [
+        "consultation",
+        "50",
+        "250",
+        "holistic consultation",
+        "initial consultation"
+      ],
+      "source": "price-comparison",
+      "text": "On the general Alternative Medicine Cost Abroad page (starting estimates only, NOT ITC-specific): Initial Holistic Consultation $50-$250 USD. This is a general abroad consultation range, not the ITC package price. ITC packages are $18,995 USD Out-Patient / $30,000 USD In-Patient for 3 weeks.",
+      "title": "$50-$250 consultation range — general abroad, not ITC",
+      "cancer_type": "general_alt_med",
+      "scope": "general_abroad_comparison",
+      "topic": "pricing_comparison"
+    }
+  ],
+  "meta": {
+    "candidate": "Antoinne Stewart",
+    "contact": {
+      "email": "info@placidway.com",
+      "phone_toll_free": "+1-888-296-6664",
+      "quote": "Contact PlacidWay for a free quote"
+    },
+    "ingested_at": "2026-11-15",
+    "project": "PlacidWay Website Knowledge Chatbot — ITC Immunity Therapy Center",
+    "rule": "Answer ONLY from these 7 pages. If the answer is not here, say 'I don't know' and point to a free quote. Never invent prices, clinics, or medical facts.",
+    "source_count": 7
+  },
+  "not_in_kb": [
+    "dental implants",
+    "any ITC price in Turkey",
+    "any adenocarcinoma / adrenal / anal price outside Tijuana, Mexico",
+    "a specific recovery time in days",
+    "whether a treatment is safe for diabetes or any individual condition",
+    "booking an appointment for a specific date",
+    "weather in Cancun or anywhere else",
+    "a $50 ITC package price — $50 appears only as the low end of the $50-$250 general initial holistic consultation range on the comparison page, not as an ITC treatment price"
+  ],
+  "sources": [
+    {
+      "id": "profile",
+      "title": "ITC Immunity Therapy Center — Alternative Cancer Treatment in Tijuana",
+      "url": "https://www.placidway.com/profile/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center"
+    },
+    {
+      "id": "adenocarcinoma",
+      "title": "Alternative Adenocarcinoma Cancer Treatment in Tijuana",
+      "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+    },
+    {
+      "id": "adrenal",
+      "title": "Alternative Adrenal Cancer Treatment in Tijuana",
+      "url": "https://www.placidway.com/package/7902/Alternative-Adrenal-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+    },
+    {
+      "id": "anal",
+      "title": "Alternative Anal Cancer Treatment in Tijuana",
+      "url": "https://www.placidway.com/package/7901/Alternative-Anal-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+    },
+    {
+      "id": "videos",
+      "title": "ITC Tijuana Videos — Alternative Cancer Treatment",
+      "url": "https://www.placidway.com/profile-videos/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center"
+    },
+    {
+      "id": "price-list",
+      "title": "ITC Immunity Therapy Center — Price List",
+      "url": "https://www.placidway.com/price-list/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center"
+    },
+    {
+      "id": "price-comparison",
+      "title": "Alternative Medicine Cost Abroad — Compare Prices 2026",
+      "url": "https://www.placidway.com/search-medical-pricings/Alternative-Medicine/All/1"
+    }
+  ]
+}
