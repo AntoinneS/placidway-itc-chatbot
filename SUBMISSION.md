@@ -7,7 +7,7 @@
 **Public demo link:** https://placidway-itc-chatbot.pages.dev  
 Public, no login required. Keep running for at least 7 days after submission, per the assessment.
 
-**Code:** GitHub repository link / zip — [TO BE INSERTED — repo to be created from ~/workspace/placidway-chatbot/]  
+**Code:** https://github.com/AntoinneS/placidway-itc-chatbot (public, commit aeb276d, 15 Nov 2026) — also available as a zip of the same files on request.  
 Files: `index.html`, `knowledge-base.json`, `ingest.py`, `README.md`, `test-results.md`
 
 ## What I built
